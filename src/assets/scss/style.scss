@@ -1,1 +1,39 @@
+@import '~bootstrap/scss/bootstrap';
 @import './variables';
+
+body {
+  background-color: $bodyBg;
+  overflow-x: hidden;
+}
+
+.btn {
+  display: block;
+  
+  &-primary {
+    background-color: $primary;
+  }
+}
+
+.form-control {
+  background-color: $formBg;
+  color: $formColor;
+
+  &:active {
+    box-shadow: none;
+  }
+
+  &:focus {
+    background-color: inherit;
+    border-color: $primary;
+    box-shadow: none;
+  }
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  color: $textDark;
+}
