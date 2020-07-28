@@ -1,26 +1,47 @@
 import React from 'react'
 
-import { Col, Container, Row } from 'react-bootstrap'
+import { Redirect } from 'react-router-dom'
 
-import NavigationSide from '../components/NavigationSide/NavigationSide'
-import NavigationTop from '../components/NavigationTop/NavigationTop'
+import { isAuthenticated } from '../helpers/Authentication'
+
+import { Col, Row } from 'react-bootstrap'
+
+import Navigation from '../components/Navigation/Navigation'
+import Sidebar from '../components/Sidebar/Sidebar'
 
 export default class DashboardLayout extends React.Component {
+  constructor() {
+    super()
+
+    this.state = {
+      auth: true
+    }
+  }
+
+  componentDidMount() {
+    if(!isAuthenticated()) {
+      this.setState({ auth: false })
+    }
+  }
+  
   render() {
+    let { auth } = this.state
+
     return (
-      <section id="DashboardLayout" style={{ minHeight: '100vh' }}>
+      <>
+        {((auth) ? '' : <Redirect to='/login' />)}
+        
+        <Navigation />
+
         <Row>
-          <Col xs={1} style={{ minHeight: '100vh', paddingRight: '0' }}>
-            <NavigationSide />
+          <Col className='bg-dark px-4' style={{ height: 'calc(100vh - 56px)', maxWidth: '14%' }}>
+            <Sidebar />
           </Col>
-          <Col style={{ paddingLeft: '1px' }}>
-            <NavigationTop />
-            <Container fluid style={{ padding: '1rem' }}>
-              {this.props.children}
-            </Container>
+          <Col className='pb-5 px-0' style={{ height: 'calc(100vh - 56px)', overflowY: 'scroll' }}>
+            {this.props.children}
           </Col>
         </Row>
-      </section>
+      </>
     )
   }
 }

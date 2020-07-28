@@ -1,8 +1,12 @@
-$primary: #577BF9;
+$bgDark: #242F69;
 
-$bodyBg: #F6F6FA;
+$bodyColor: #F7F6F9;
 
-$formBg: #ECEDF6;
-$formColor: #7F7C9E;
+$borderColor: darken($bodyColor, 10);
 
-$textDark: #131340;
+$danger: #e74c3c;
+$primary: #5864FF;
+$success: #2ecc71;
+$warning: #f1c40f;
+
+$textMuted: #8391d5;
