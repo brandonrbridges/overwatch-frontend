@@ -6,6 +6,8 @@ import { fetchUser } from './helpers/Authentication'
 import Dashboard from './pages/Dashboard'
 import DashboardCustomers from './pages/Dashboard/Customers'
 import DashboardCustomerSingle from './pages/Dashboard/CustomerSingle'
+import DashboardJobs from './pages/Dashboard/Jobs'
+import DashboardJobSingle from './pages/Dashboard/JobSingle'
 import DashboardSettings from './pages/Dashboard/Settings'
 import DashboardUsers from './pages/Dashboard/Users'
 import DashboardUserSingle from './pages/Dashboard/UserSingle'
@@ -50,6 +52,9 @@ export default class App extends React.Component {
 
           <Route exact path='/dashboard/customers' component={DashboardCustomers} />
           <Route exact path='/dashboard/customers/:id' component={DashboardCustomerSingle} />
+
+          <Route exact path='/dashboard/jobs' component={DashboardJobs} />
+          <Route exact path='/dashboard/jobs/:id' component={DashboardJobSingle} />
 
           <Route exact path='/dashboard/settings' component={DashboardSettings} />
 

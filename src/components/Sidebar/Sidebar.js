@@ -7,7 +7,7 @@ import { Nav } from 'react-bootstrap'
 
 /** Font Awesome */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBox, faCog, faColumns, faFileAlt, faKey, faPoll, faTruck, faUser, faUserChart } from '@fortawesome/pro-regular-svg-icons'
+import { faCog, faColumns, faFileAlt, faKey, faUser } from '@fortawesome/pro-regular-svg-icons'
 
 /** Stylesheet */
 import './Sidebar.scss'
@@ -20,6 +20,7 @@ export default class Sidebar extends React.Component {
       links: [
         { label: 'Dashboard', icon: faColumns, url: '' },
         { label: 'Customers', icon: faUser, url: '/customers' },
+        { label: 'Jobs', icon: faFileAlt, url: '/jobs' }
       ],
       bottomLinks: [
         { label: 'Users', icon: faKey, url: '/users' },

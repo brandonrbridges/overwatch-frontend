@@ -54,19 +54,11 @@ export default class Dashboard extends React.Component {
           <h4 className='mb-5 text-white'>Welcome, {this.props.user} 👋🏻</h4>
           <Row>
             <Col>
-              <p className='h6 text-muted'>Total Revenue in {moment(new Date()).format('MMMM')}</p>
-              <p className='h1 text-white'>£0</p>
-            </Col>
-            <Col>
-              <p className='h6 text-muted'>Total Orders in {moment(new Date()).format('MMMM')}</p>
+              <p className='h6 text-muted'>Total Jobs Booked in {moment(new Date()).format('MMMM')}</p>
               <p className='h1 text-white'>0</p>
             </Col>
             <Col>
-              <p className='h6 text-muted'>Today's Revenue</p>
-              <p className='h1 text-white'>£0</p>
-            </Col>
-            <Col>
-              <p className='h6 text-muted'>Open Quotes</p>
+              <p className='h6 text-muted'>Open Jobs</p>
               <p className='h1 text-white'>
                 {
                   orders.forEach(x => {
@@ -77,7 +69,7 @@ export default class Dashboard extends React.Component {
               </p>
             </Col>
             <Col>
-              <p className='h6 text-muted'>Pending Invoices</p>
+              <p className='h6 text-muted'>Pending Jobs</p>
               <p className='h1 text-white'>
                 {
                   orders.forEach(x => {
@@ -92,12 +84,12 @@ export default class Dashboard extends React.Component {
         <Container fluid>
           <Row className='mb-4'>
             <Col>
-              <DashboardWidget title='Sales To Date (This Year)'>
+              <DashboardWidget title='Jobs to Date'>
                 Sales
               </DashboardWidget>
             </Col>
             <Col>
-              <DashboardWidget title='Top Selling Products'>
+              <DashboardWidget title='Top Performing City'>
                 Sales
               </DashboardWidget>
             </Col>
@@ -118,11 +110,11 @@ export default class Dashboard extends React.Component {
               </DashboardWidget>
             </Col>
             <Col>
-              <DashboardWidget title='Pending Quotes'>
+              <DashboardWidget title='Pending Jobs'>
                 <Table borderless>
                   <thead>
                     <tr>
-                      <th>Order ID</th>
+                      <th>Job ID</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -136,11 +128,11 @@ export default class Dashboard extends React.Component {
               </DashboardWidget>
             </Col>
             <Col>
-              <DashboardWidget title='Pending Invoices'>
+              <DashboardWidget title='Pending Jobs'>
                 <Table borderless>
                   <thead>
                     <tr>
-                      <th>Order ID</th>
+                      <th>Job ID</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -154,11 +146,11 @@ export default class Dashboard extends React.Component {
               </DashboardWidget>
             </Col>
             <Col>
-              <DashboardWidget title='Pending Delivery'>
+              <DashboardWidget title='Pending Completion'>
                 <Table borderless>
                   <thead>
                     <tr>
-                      <th>Order ID</th>
+                      <th>Job ID</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -180,8 +172,8 @@ export default class Dashboard extends React.Component {
             </Col>
             <Col>
               <IconBubble icon={faFileAlt} className='mb-3' />
-              <h6>Order Lookup</h6>
-              <Link to='/dashboard/orders'>Lookup orders</Link>
+              <h6>Job Lookup</h6>
+              <Link to='/dashboard/jobs'>Lookup jobs</Link>
             </Col>
             <Col>
               <IconBubble icon={faUsers} className='mb-3' />
